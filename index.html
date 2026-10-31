@@ -81,11 +81,22 @@
   .cta-final p { color:#cfe3e3; font-size:18px; margin:0 auto 30px; max-width:620px; }
   .cta-final .ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
 
-  .form-caja { max-width:760px; margin:0 auto; background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:0 18px 40px rgba(14,59,67,.10); }
-  .form-caja iframe { display:block; width:100%; height:1150px; border:0; background:#fff; }
-  .form-alt { text-align:center; color:var(--muted); font-size:15px; margin:18px 0 0; }
+  .opciones { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; max-width:900px; margin:0 auto; }
+  .opcion { background:#fff; border:1px solid var(--line); border-radius:20px; padding:34px 30px; display:flex; flex-direction:column; box-shadow:0 10px 30px rgba(14,59,67,.06); }
+  .opcion.destacada { border:2px solid var(--terra); box-shadow:0 18px 40px rgba(194,65,12,.14); }
+  .icono-op { width:58px; height:58px; border-radius:16px; display:grid; place-items:center; background:linear-gradient(135deg,var(--terra),var(--gold)); margin-bottom:18px; }
+  .icono-op.chat { background:linear-gradient(135deg,var(--petrol),var(--teal)); }
+  .icono-op svg { width:30px; height:30px; }
+  .opcion h3 { color:var(--petrol); font-size:22px; margin:0 0 8px; }
+  .opcion p { color:var(--muted); margin:0 0 14px; }
+  .opcion ul { list-style:none; padding:0; margin:0 0 24px; flex:1; }
+  .opcion li { padding:5px 0 5px 26px; position:relative; font-size:15px; }
+  .opcion li::before { content:"✓"; position:absolute; left:0; color:var(--teal); font-weight:800; }
+  .opcion .btn { justify-content:center; }
+  .btn-secundario { background:var(--petrol); color:#fff; }
+  .btn-secundario:hover { background:#0a2e35; }
+  .form-alt { text-align:center; color:var(--muted); font-size:15px; margin:26px 0 0; }
   .form-alt a { color:var(--teal); font-weight:600; }
-  @media (max-width:520px) { .form-caja iframe { height:1350px; } }
   footer { padding:56px 0 36px; color:var(--muted); font-size:14.5px; }
   footer .fila { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:center; }
   footer img { height:44px; }
@@ -211,12 +222,25 @@
     <div class="titulo">
       <span class="eyebrow">Solicita tu cotización</span>
       <h2>Cuéntanos qué necesitas y agenda tu reunión</h2>
-      <p>Completa el formulario: revisamos nuestra agenda y te confirmamos la reunión por Google Meet al instante.</p>
+      <p>Elige cómo prefieres hacerlo: revisamos nuestra agenda y te confirmamos la reunión por Google Meet al instante.</p>
     </div>
-    <div class="form-caja">
-      <iframe id="form-n8n" title="Formulario de cotización de Ruway IA" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="opciones">
+      <article class="opcion destacada">
+        <div class="icono-op"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+        <h3>Formulario de cotización</h3>
+        <p>Completa tus datos en 2 pasos, elige el día y la hora de tu reunión, y recibe la confirmación con tu enlace de Google Meet.</p>
+        <ul><li>Toma unos 2 minutos</li><li>Confirmación inmediata por correo</li><li>Invitación en tu calendario</li></ul>
+        <a id="form-abrir" class="btn btn-primary" href="#" target="_blank" rel="noopener">Abrir el formulario →</a>
+      </article>
+      <article class="opcion">
+        <div class="icono-op chat"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
+        <h3>Asistente virtual</h3>
+        <p>¿Prefieres conversar? Nuestro asistente responde tus dudas, toma tus datos y agenda la reunión contigo, paso a paso.</p>
+        <ul><li>Disponible 24/7</li><li>Respuestas al instante</li><li>Te muestra los horarios libres</li></ul>
+        <a class="btn btn-secundario js-abrir-chat" href="#">💬 Hablar con el asistente</a>
+      </article>
     </div>
-    <p class="form-alt">¿No ves el formulario? <a id="form-abrir" href="#" target="_blank" rel="noopener">Ábrelo en una pestaña nueva</a> o escríbenos a nuestro <a href="#" class="js-abrir-chat">asistente virtual</a>.</p>
+    <p class="form-alt">También puedes escribirnos por <a href="https://wa.me/51992093538?text=Hola%20Ruway%20IA%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">WhatsApp al +51 992 093 538</a>.</p>
   </div>
 </section>
 
@@ -264,7 +288,6 @@
   document.getElementById('anio').textContent = new Date().getFullYear();
   if (/^https:\/\//.test(N8N_FORM_URL)) {
     document.querySelectorAll('.js-cotizar').forEach((a) => { a.href = '#cotizar'; a.removeAttribute('target'); });
-    document.getElementById('form-n8n').src = N8N_FORM_URL;
     document.getElementById('form-abrir').href = N8N_FORM_URL;
   } else {
     document.getElementById('cotizar').style.display = 'none';
