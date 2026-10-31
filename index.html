@@ -1,1 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruway IA – La IA que hace el trabajo</title>
+<meta name="description" content="Ruway IA: consultoría en inteligencia artificial, automatizaciones, soluciones basadas en datos y agentes de IA para empresas de Perú y Latinoamérica.">
+<meta property="og:title" content="Ruway IA – La IA que hace el trabajo">
+<meta property="og:description" content="Consultoría en IA, automatizaciones, soluciones con datos y agentes de IA para tu empresa.">
+<meta property="og:image" content="https://guerrapyuri-bot.github.io/Agente_Ruway_IA2/assets/ruway-icono.png">
+<meta property="og:locale" content="es_PE">
+<link rel="icon" type="image/png" href="assets/ruway-icono.png">
+<style>
+  :root { --petrol:#0E3B43; --petrol-2:#0A2E35; --teal:#178F8C; --mint:#7FE0D2; --terra:#C2410C; --gold:#F2A541; --text:#22323a; --muted:#5b6a70; --bg:#f6f7f8; --line:#e3e8ea; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif; color:var(--text); background:#fff; line-height:1.6; }
+  a { color:inherit; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 24px; }
+  .btn { display:inline-flex; align-items:center; gap:10px; padding:14px 24px; border-radius:10px; font-weight:700; text-decoration:none; font-size:16px; transition:transform .15s, box-shadow .15s, background .15s; border:2px solid transparent; cursor:pointer; }
+  .btn:hover { transform:translateY(-2px); }
+  .btn-primary { background:var(--terra); color:#fff; box-shadow:0 8px 22px rgba(194,65,12,.35); }
+  .btn-primary:hover { background:#a8370a; }
+  .btn-ghost { border-color:rgba(255,255,255,.45); color:#fff; }
+  .btn-ghost:hover { background:rgba(255,255,255,.08); }
+  .btn svg { width:20px; height:20px; flex:none; }
 
+  /* Navegación */
+  nav { position:sticky; top:0; z-index:50; background:rgba(14,59,67,.96); backdrop-filter:blur(8px); }
+  nav .wrap { display:flex; align-items:center; justify-content:space-between; height:72px; }
+  nav img { height:46px; width:auto; display:block; }
+  nav ul { list-style:none; display:flex; gap:28px; margin:0; padding:0; }
+  nav ul a { color:#dfeeee; text-decoration:none; font-weight:600; font-size:15px; }
+  nav ul a:hover { color:#fff; }
+  nav .btn { padding:10px 18px; font-size:15px; box-shadow:none; }
+
+  /* Portada */
+  .hero { position:relative; overflow:hidden; background:radial-gradient(1200px 600px at 85% 20%, #17555f 0%, var(--petrol) 45%, var(--petrol-2) 100%); color:#fff; padding:96px 0 110px; }
+  .hero .deco { position:absolute; right:-80px; top:50%; transform:translateY(-50%); width:560px; height:560px; opacity:.16; pointer-events:none; }
+  .hero .wrap { position:relative; }
+  .eyebrow { display:inline-block; font-size:13px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
+  .hero h1 { font-size:clamp(38px,6vw,64px); line-height:1.05; margin:0 0 20px; max-width:720px; letter-spacing:-1px; }
+  .hero h1 em { font-style:normal; color:var(--gold); }
+  .hero p.lead { font-size:clamp(17px,2vw,20px); color:#cfe3e3; max-width:620px; margin:0 0 34px; }
+  .hero .ctas { display:flex; gap:14px; flex-wrap:wrap; }
+  .hero .nota { margin-top:22px; font-size:14px; color:#a9c9c9; }
+
+  /* Secciones */
+  section { padding:88px 0; scroll-margin-top:72px; }
+  .titulo { text-align:center; max-width:720px; margin:0 auto 50px; }
+  .titulo .eyebrow { color:var(--terra); }
+  .titulo h2 { font-size:clamp(28px,4vw,40px); color:var(--petrol); margin:0 0 12px; line-height:1.15; }
+  .titulo p { color:var(--muted); font-size:18px; margin:0; }
+
+  .servicios { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:28px 24px; transition:transform .2s, box-shadow .2s, border-color .2s; }
+  .card:hover { transform:translateY(-4px); box-shadow:0 16px 36px rgba(14,59,67,.10); border-color:#cfe1e1; }
+  .card .icono { width:54px; height:54px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg,var(--petrol),var(--teal)); margin-bottom:18px; }
+  .card .icono svg { width:28px; height:28px; }
+  .card h3 { color:var(--petrol); font-size:19px; margin:0 0 8px; }
+  .card p { color:var(--muted); margin:0 0 14px; font-size:15.5px; }
+  .card ul { margin:0; padding-left:18px; color:var(--text); font-size:14.5px; }
+  .card li { margin:3px 0; }
+
+  .proceso { background:var(--bg); }
+  .pasos { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; counter-reset:paso; }
+  .paso { position:relative; background:#fff; border-radius:16px; padding:30px 24px 26px; border:1px solid var(--line); }
+  .paso::before { counter-increment:paso; content:counter(paso); position:absolute; top:-18px; left:24px; width:40px; height:40px; border-radius:50%; background:var(--terra); color:#fff; font-weight:800; display:grid; place-items:center; box-shadow:0 6px 16px rgba(194,65,12,.3); }
+  .paso h3 { color:var(--petrol); margin:10px 0 6px; font-size:18px; }
+  .paso p { color:var(--muted); margin:0; font-size:15.5px; }
+
+  .historia { display:grid; grid-template-columns:300px 1fr; gap:56px; align-items:center; }
+  .historia .simbolo { width:100%; max-width:300px; aspect-ratio:1; border-radius:28px; background:radial-gradient(circle at 40% 35%, #17555f, var(--petrol)); display:grid; place-items:center; box-shadow:0 20px 50px rgba(14,59,67,.25); }
+  .historia .simbolo svg { width:72%; height:72%; }
+  .historia h2 { font-size:clamp(26px,3.6vw,36px); color:var(--petrol); margin:0 0 14px; line-height:1.2; }
+  .historia p { color:var(--muted); font-size:17px; margin:0 0 14px; }
+  .historia strong { color:var(--text); }
+
+  .cta-final { background:linear-gradient(120deg,var(--petrol),#145863); color:#fff; text-align:center; border-radius:24px; padding:60px 28px; margin:0 24px; }
+  .cta-final h2 { font-size:clamp(26px,4vw,38px); margin:0 0 12px; }
+  .cta-final p { color:#cfe3e3; font-size:18px; margin:0 auto 30px; max-width:620px; }
+  .cta-final .ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+  .form-caja { max-width:760px; margin:0 auto; background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:0 18px 40px rgba(14,59,67,.10); }
+  .form-caja iframe { display:block; width:100%; height:1150px; border:0; background:#fff; }
+  .form-alt { text-align:center; color:var(--muted); font-size:15px; margin:18px 0 0; }
+  .form-alt a { color:var(--teal); font-weight:600; }
+  @media (max-width:520px) { .form-caja iframe { height:1350px; } }
+  footer { padding:56px 0 36px; color:var(--muted); font-size:14.5px; }
+  footer .fila { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:center; }
+  footer img { height:44px; }
+  footer a { color:var(--teal); text-decoration:none; }
+  footer a:hover { text-decoration:underline; }
+  footer .legal { margin-top:22px; padding-top:18px; border-top:1px solid var(--line); font-size:13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+
+  @media (max-width:860px) { nav ul { display:none; } .historia { grid-template-columns:1fr; text-align:center; } .historia .simbolo { margin:0 auto; max-width:220px; } .hero { padding:70px 0 80px; } .hero .deco { width:380px; height:380px; right:-140px; opacity:.1; } section { padding:68px 0; } }
+  @media (max-width:520px) { nav img { height:38px; } nav .btn { padding:9px 12px; font-size:14px; } .hero .ctas .btn, .cta-final .btn { width:100%; justify-content:center; } }
+
+  /* Chat de n8n con los colores de la marca */
+  :root {
+    --chat--color-primary:#C2410C; --chat--color-primary-shade-50:#a8370a; --chat--color-primary-shade-100:#8f2f09;
+    --chat--color-secondary:#178F8C; --chat--color-secondary-shade-50:#127371;
+    --chat--header--background:#0E3B43; --chat--header--color:#ffffff;
+    --chat--toggle--background:#C2410C; --chat--toggle--hover--background:#a8370a; --chat--toggle--active--background:#8f2f09;
+    --chat--message--user--background:#178F8C; --chat--message--user--color:#ffffff;
+    --chat--window--width:380px; --chat--border-radius:14px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="./" aria-label="Ruway IA – inicio"><img src="assets/ruway-blanco.png" alt="Ruway IA"></a>
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">Cómo trabajamos</a></li>
+      <li><a href="#ruway">Por qué Ruway</a></li>
+      <li><a href="#cotizar">Cotizar</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a class="btn btn-primary js-cotizar" href="#contacto">Cotizar</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="deco" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="mck0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FE0D2"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient><linearGradient id="wck0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C2410C"/><stop offset="1" stop-color="#F2A541"/></linearGradient><radialGradient id="rck0" cx="0.4" cy="0.35" r="0.8"><stop offset="0" stop-color="#F2A541"/><stop offset="1" stop-color="#C2410C"/></radialGradient></defs><path d="M40 10 L60 10 L60 20 L70 20 L70 30 L80 30 L80 40 L90 40 L90 60 L80 60 L80 70 L70 70 L70 80 L60 80 L60 90 L40 90 L40 80 L30 80 L30 70 L20 70 L20 60 L10 60 L10 40 L20 40 L20 30 L30 30 L30 20 L40 20 Z" fill="none" stroke="url(#mck0)" stroke-width="4.2" stroke-linejoin="round"/><line x1="50" y1="50" x2="50" y2="10" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="90" y2="50" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="50" y2="90" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="10" y2="50" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="30" y2="30" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="70" y2="30" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="70" y2="70" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="30" y2="70" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><circle cx="50" cy="50" r="22" fill="none" stroke="url(#wck0)" stroke-width="1.6" stroke-dasharray="2 3.2"/><circle cx="50" cy="10" r="5" fill="url(#wck0)"/><circle cx="90" cy="50" r="5" fill="url(#wck0)"/><circle cx="50" cy="90" r="5" fill="url(#wck0)"/><circle cx="10" cy="50" r="5" fill="url(#wck0)"/><circle cx="30" cy="30" r="3.4" fill="#FFFFFF"/><circle cx="70" cy="30" r="3.4" fill="#FFFFFF"/><circle cx="70" cy="70" r="3.4" fill="#FFFFFF"/><circle cx="30" cy="70" r="3.4" fill="#FFFFFF"/><circle cx="50" cy="50" r="12" fill="url(#rck0)"/><circle cx="50" cy="50" r="4.2" fill="#FFFFFF"/></svg>
+  <div class="wrap">
+    <span class="eyebrow">Inteligencia artificial hecha en Perú</span>
+    <h1>La IA que <em>hace el trabajo</em> por tu empresa.</h1>
+    <p class="lead">Automatizamos tareas repetitivas, conectamos tus herramientas y creamos agentes de IA que atienden a tus clientes, para que tu equipo se enfoque en lo que realmente importa.</p>
+    <div class="ctas">
+      <a class="btn btn-primary js-cotizar" href="#contacto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>
+        Cotiza y agenda tu reunión</a>
+      <a class="btn btn-ghost" href="https://wa.me/51992093538?text=Hola%20Ruway%20IA%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg>
+        Escríbenos por WhatsApp</a>
+    </div>
+    <p class="nota">Diagnóstico inicial y cotización sin costo · Reuniones por Google Meet · Atención en todo Latinoamérica</p>
+  </div>
+</header>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="titulo">
+      <span class="eyebrow">Servicios</span>
+      <h2>Soluciones de IA que se notan en tu día a día</h2>
+      <p>Empezamos por tu problema, no por la tecnología.</p>
+    </div>
+    <div class="servicios">
+      <article class="card">
+        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/><path d="M9 3.5 12 2l3 1.5"/></svg></div>
+        <h3>Consultoría en IA</h3>
+        <p>Analizamos tus procesos y te decimos, con claridad, dónde la IA te ahorra tiempo y dinero.</p>
+        <ul><li>Diagnóstico de procesos</li><li>Casos de uso priorizados</li><li>Hoja de ruta de implementación</li></ul>
+      </article>
+      <article class="card">
+        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.2 7.4 10.4 16M16.8 7.4 13.6 16M7.5 6h9"/></svg></div>
+        <h3>Creación de Automatizaciones</h3>
+        <p>Conectamos tus herramientas para que las tareas repetitivas se hagan solas, sin errores.</p>
+        <ul><li>Correo, hojas de cálculo y CRM</li><li>Formularios y notificaciones</li><li>Flujos con n8n</li></ul>
+      </article>
+      <article class="card">
+        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>Soluciones basadas en datos</h3>
+        <p>Convertimos tus datos dispersos en información clara para tomar mejores decisiones.</p>
+        <ul><li>Tableros e indicadores</li><li>Reportes automáticos</li><li>Análisis con IA</li></ul>
+      </article>
+      <article class="card">
+        <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 7V3M9 12h.01M15 12h.01M9.5 16h5"/></svg></div>
+        <h3>Implementación de Agentes</h3>
+        <p>Asistentes de IA que atienden a tus clientes, responden consultas y registran oportunidades 24/7.</p>
+        <ul><li>Atención por web y WhatsApp</li><li>Calificación de prospectos</li><li>Integración con tus sistemas</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="proceso" class="proceso">
+  <div class="wrap">
+    <div class="titulo">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2>De la idea al resultado, en cuatro pasos</h2>
+      <p>Un proceso simple y transparente, sin letra pequeña.</p>
+    </div>
+    <div class="pasos">
+      <div class="paso"><h3>Diagnóstico</h3><p>Agenda una reunión gratuita por Google Meet: conversamos sobre tu negocio y detectamos las tareas que más tiempo consumen.</p></div>
+      <div class="paso"><h3>Propuesta</h3><p>Te enviamos una propuesta clara: qué haremos, en cuánto tiempo y a qué precio.</p></div>
+      <div class="paso"><h3>Implementación</h3><p>Construimos la solución, la probamos con tus datos reales y capacitamos a tu equipo.</p></div>
+      <div class="paso"><h3>Acompañamiento</h3><p>Medimos los resultados y ajustamos la solución para que siga generando valor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ruway">
+  <div class="wrap historia">
+    <div class="simbolo"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="mck1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FE0D2"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient><linearGradient id="wck1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C2410C"/><stop offset="1" stop-color="#F2A541"/></linearGradient><radialGradient id="rck1" cx="0.4" cy="0.35" r="0.8"><stop offset="0" stop-color="#F2A541"/><stop offset="1" stop-color="#C2410C"/></radialGradient></defs><path d="M40 10 L60 10 L60 20 L70 20 L70 30 L80 30 L80 40 L90 40 L90 60 L80 60 L80 70 L70 70 L70 80 L60 80 L60 90 L40 90 L40 80 L30 80 L30 70 L20 70 L20 60 L10 60 L10 40 L20 40 L20 30 L30 30 L30 20 L40 20 Z" fill="none" stroke="url(#mck1)" stroke-width="4.2" stroke-linejoin="round"/><line x1="50" y1="50" x2="50" y2="10" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="90" y2="50" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="50" y2="90" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="10" y2="50" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="30" y2="30" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="70" y2="30" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="70" y2="70" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="30" y2="70" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><circle cx="50" cy="50" r="22" fill="none" stroke="url(#wck1)" stroke-width="1.6" stroke-dasharray="2 3.2"/><circle cx="50" cy="10" r="5" fill="url(#wck1)"/><circle cx="90" cy="50" r="5" fill="url(#wck1)"/><circle cx="50" cy="90" r="5" fill="url(#wck1)"/><circle cx="10" cy="50" r="5" fill="url(#wck1)"/><circle cx="30" cy="30" r="3.4" fill="#FFFFFF"/><circle cx="70" cy="30" r="3.4" fill="#FFFFFF"/><circle cx="70" cy="70" r="3.4" fill="#FFFFFF"/><circle cx="30" cy="70" r="3.4" fill="#FFFFFF"/><circle cx="50" cy="50" r="12" fill="url(#rck1)"/><circle cx="50" cy="50" r="4.2" fill="#FFFFFF"/></svg></div>
+    <div>
+      <span class="eyebrow" style="color:var(--terra)">Por qué Ruway</span>
+      <h2>Ruway significa “hacer” en quechua.</h2>
+      <p>Y eso es lo que hacemos: llevar la inteligencia artificial del discurso a la práctica, con soluciones que <strong>funcionan desde el primer día</strong> en tu operación.</p>
+      <p>Nuestro símbolo es la <strong>chakana</strong>, la cruz andina, dibujada como una red neuronal: la sabiduría de nuestra tradición unida a la tecnología que está transformando el mundo.</p>
+      <p>Hablamos tu idioma, entendemos la realidad de las empresas peruanas y latinoamericanas, y cuidamos tus datos como si fueran nuestros.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cotizar" class="proceso">
+  <div class="wrap">
+    <div class="titulo">
+      <span class="eyebrow">Solicita tu cotización</span>
+      <h2>Cuéntanos qué necesitas y agenda tu reunión</h2>
+      <p>Completa el formulario: revisamos nuestra agenda y te confirmamos la reunión por Google Meet al instante.</p>
+    </div>
+    <div class="form-caja">
+      <iframe id="form-n8n" title="Formulario de cotización de Ruway IA" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="form-alt">¿No ves el formulario? <a id="form-abrir" href="#" target="_blank" rel="noopener">Ábrelo en una pestaña nueva</a> o escríbenos a nuestro <a href="#" class="js-abrir-chat">asistente virtual</a>.</p>
+  </div>
+</section>
+
+<section id="contacto" style="padding-top:20px">
+  <div class="cta-final">
+    <h2>¿Listo para que la IA trabaje por ti?</h2>
+    <p>Agenda tu reunión en minutos, desde el formulario o conversando con nuestro asistente virtual.</p>
+    <div class="ctas">
+      <a class="btn btn-primary js-cotizar" href="https://wa.me/51992093538" target="_blank" rel="noopener">Solicita tu cotización gratis</a>
+      <a class="btn btn-ghost js-abrir-chat" href="#">💬 Hablar con el asistente</a>
+      <a class="btn btn-ghost" href="https://wa.me/51992093538?text=Hola%20Ruway%20IA%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fila">
+      <img src="assets/ruway-color.png" alt="Ruway IA">
+      <div>
+        <a href="mailto:guerrapyuri@gmail.com">guerrapyuri@gmail.com</a> ·
+        <a href="https://wa.me/51992093538" target="_blank" rel="noopener">WhatsApp +51 992 093 538</a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="anio">2026</span> Ruway IA · Lima, Perú</span>
+      <span><a href="politica-privacidad.html">Política de Privacidad</a> · El asistente virtual funciona con inteligencia artificial.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     CONFIGURACIÓN: pega aquí las URLs de producción de tu n8n.
+     - N8N_FORM_URL: nodo "Formulario - Página 1" → Production URL
+     - N8N_CHAT_URL: nodo "Chat con clientes" → Chat URL (Production)
+     Mientras estén vacías, los botones abren WhatsApp y el chat no se muestra.
+     Aquí NO van claves ni contraseñas: este archivo es público.
+     ===================================================================== -->
+<script>
+  const N8N_FORM_URL = 'https://proyecto-agente.app.n8n.cloud/form/solicitar-cotizacion';
+  const N8N_CHAT_URL = 'https://proyecto-agente.app.n8n.cloud/webhook/8a82cb6f-079e-476a-b34c-4bfdaa9d7780/chat';
+</script>
+
+<script>
+  document.getElementById('anio').textContent = new Date().getFullYear();
+  if (/^https:\/\//.test(N8N_FORM_URL)) {
+    document.querySelectorAll('.js-cotizar').forEach((a) => { a.href = '#cotizar'; a.removeAttribute('target'); });
+    document.getElementById('form-n8n').src = N8N_FORM_URL;
+    document.getElementById('form-abrir').href = N8N_FORM_URL;
+  } else {
+    document.getElementById('cotizar').style.display = 'none';
+    document.querySelectorAll('.js-cotizar').forEach((a) => { a.href = 'https://wa.me/51992093538?text=Hola%20Ruway%20IA%2C%20quiero%20una%20cotizaci%C3%B3n'; a.target = '_blank'; a.rel = 'noopener'; });
+  }
+</script>
+
+<script type="module">
+  if (/^https:\/\//.test(N8N_CHAT_URL)) {
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css';
+    document.head.appendChild(css);
+    const { createChat } = await import('https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js');
+    createChat({
+      webhookUrl: N8N_CHAT_URL,
+      mode: 'window',
+      showWelcomeScreen: false,
+      loadPreviousSession: false,
+      defaultLanguage: 'en',
+      initialMessages: [
+        '¡Hola! 👋 Soy el asistente virtual de Ruway IA.',
+        '¿En qué puedo ayudarte? Puedo contarte sobre nuestros servicios, preparar tu cotización y agendar tu reunión.'
+      ],
+      i18n: {
+        en: {
+          title: 'Ruway IA',
+          subtitle: 'Asistente virtual · responde al instante',
+          footer: '',
+          getStarted: 'Nueva conversación',
+          inputPlaceholder: 'Escribe tu mensaje…',
+          closeButtonTooltip: 'Cerrar'
+        }
+      }
+    });
+  }
+  document.querySelectorAll('.js-abrir-chat').forEach((a) => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    const boton = document.querySelector('.chat-window-toggle');
+    if (boton) { const abierto = document.querySelector('.chat-window-wrapper .chat-window'); if (!abierto || abierto.offsetParent === null) boton.click(); }
+    else if (/^https:\/\//.test(N8N_FORM_URL)) location.hash = '#cotizar';
+  }));
+</script>
+</body>
+</html>
