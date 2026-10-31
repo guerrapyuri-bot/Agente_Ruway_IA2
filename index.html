@@ -24,7 +24,7 @@
   .btn-ghost { border-color:rgba(255,255,255,.45); color:#fff; }
   .btn-ghost:hover { background:rgba(255,255,255,.08); }
   .btn svg { width:20px; height:20px; flex:none; }
-
+ 
   /* Navegación */
   nav { position:sticky; top:0; z-index:50; background:rgba(14,59,67,.96); backdrop-filter:blur(8px); }
   nav .wrap { display:flex; align-items:center; justify-content:space-between; height:72px; }
@@ -33,7 +33,7 @@
   nav ul a { color:#dfeeee; text-decoration:none; font-weight:600; font-size:15px; }
   nav ul a:hover { color:#fff; }
   nav .btn { padding:10px 18px; font-size:15px; box-shadow:none; }
-
+ 
   /* Portada */
   .hero { position:relative; overflow:hidden; background:radial-gradient(1200px 600px at 85% 20%, #17555f 0%, var(--petrol) 45%, var(--petrol-2) 100%); color:#fff; padding:96px 0 110px; }
   .hero .deco { position:absolute; right:-80px; top:50%; transform:translateY(-50%); width:560px; height:560px; opacity:.16; pointer-events:none; }
@@ -44,14 +44,14 @@
   .hero p.lead { font-size:clamp(17px,2vw,20px); color:#cfe3e3; max-width:620px; margin:0 0 34px; }
   .hero .ctas { display:flex; gap:14px; flex-wrap:wrap; }
   .hero .nota { margin-top:22px; font-size:14px; color:#a9c9c9; }
-
+ 
   /* Secciones */
   section { padding:88px 0; scroll-margin-top:72px; }
   .titulo { text-align:center; max-width:720px; margin:0 auto 50px; }
   .titulo .eyebrow { color:var(--terra); }
   .titulo h2 { font-size:clamp(28px,4vw,40px); color:var(--petrol); margin:0 0 12px; line-height:1.15; }
   .titulo p { color:var(--muted); font-size:18px; margin:0; }
-
+ 
   .servicios { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; }
   .card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:28px 24px; transition:transform .2s, box-shadow .2s, border-color .2s; }
   .card:hover { transform:translateY(-4px); box-shadow:0 16px 36px rgba(14,59,67,.10); border-color:#cfe1e1; }
@@ -61,26 +61,26 @@
   .card p { color:var(--muted); margin:0 0 14px; font-size:15.5px; }
   .card ul { margin:0; padding-left:18px; color:var(--text); font-size:14.5px; }
   .card li { margin:3px 0; }
-
+ 
   .proceso { background:var(--bg); }
   .pasos { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; counter-reset:paso; }
   .paso { position:relative; background:#fff; border-radius:16px; padding:30px 24px 26px; border:1px solid var(--line); }
   .paso::before { counter-increment:paso; content:counter(paso); position:absolute; top:-18px; left:24px; width:40px; height:40px; border-radius:50%; background:var(--terra); color:#fff; font-weight:800; display:grid; place-items:center; box-shadow:0 6px 16px rgba(194,65,12,.3); }
   .paso h3 { color:var(--petrol); margin:10px 0 6px; font-size:18px; }
   .paso p { color:var(--muted); margin:0; font-size:15.5px; }
-
+ 
   .historia { display:grid; grid-template-columns:300px 1fr; gap:56px; align-items:center; }
   .historia .simbolo { width:100%; max-width:300px; aspect-ratio:1; border-radius:28px; background:radial-gradient(circle at 40% 35%, #17555f, var(--petrol)); display:grid; place-items:center; box-shadow:0 20px 50px rgba(14,59,67,.25); }
   .historia .simbolo svg { width:72%; height:72%; }
   .historia h2 { font-size:clamp(26px,3.6vw,36px); color:var(--petrol); margin:0 0 14px; line-height:1.2; }
   .historia p { color:var(--muted); font-size:17px; margin:0 0 14px; }
   .historia strong { color:var(--text); }
-
+ 
   .cta-final { background:linear-gradient(120deg,var(--petrol),#145863); color:#fff; text-align:center; border-radius:24px; padding:60px 28px; margin:0 24px; }
   .cta-final h2 { font-size:clamp(26px,4vw,38px); margin:0 0 12px; }
   .cta-final p { color:#cfe3e3; font-size:18px; margin:0 auto 30px; max-width:620px; }
   .cta-final .ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-
+ 
   .opciones { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; max-width:900px; margin:0 auto; }
   .opcion { background:#fff; border:1px solid var(--line); border-radius:20px; padding:34px 30px; display:flex; flex-direction:column; box-shadow:0 10px 30px rgba(14,59,67,.06); }
   .opcion.destacada { border:2px solid var(--terra); box-shadow:0 18px 40px rgba(194,65,12,.14); }
@@ -103,10 +103,10 @@
   footer a { color:var(--teal); text-decoration:none; }
   footer a:hover { text-decoration:underline; }
   footer .legal { margin-top:22px; padding-top:18px; border-top:1px solid var(--line); font-size:13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-
+ 
   @media (max-width:860px) { nav ul { display:none; } .historia { grid-template-columns:1fr; text-align:center; } .historia .simbolo { margin:0 auto; max-width:220px; } .hero { padding:70px 0 80px; } .hero .deco { width:380px; height:380px; right:-140px; opacity:.1; } section { padding:68px 0; } }
   @media (max-width:520px) { nav img { height:38px; } nav .btn { padding:9px 12px; font-size:14px; } .hero .ctas .btn, .cta-final .btn { width:100%; justify-content:center; } }
-
+ 
   /* Chat de n8n con los colores de la marca */
   :root {
     --chat--color-primary:#C2410C; --chat--color-primary-shade-50:#a8370a; --chat--color-primary-shade-100:#8f2f09;
@@ -119,7 +119,7 @@
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <div class="wrap">
     <a href="./" aria-label="Ruway IA – inicio"><img src="assets/ruway-blanco.png" alt="Ruway IA"></a>
@@ -133,7 +133,7 @@
     <a class="btn btn-primary js-cotizar" href="#contacto">Cotizar</a>
   </div>
 </nav>
-
+ 
 <header class="hero">
   <svg class="deco" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="mck0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FE0D2"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient><linearGradient id="wck0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C2410C"/><stop offset="1" stop-color="#F2A541"/></linearGradient><radialGradient id="rck0" cx="0.4" cy="0.35" r="0.8"><stop offset="0" stop-color="#F2A541"/><stop offset="1" stop-color="#C2410C"/></radialGradient></defs><path d="M40 10 L60 10 L60 20 L70 20 L70 30 L80 30 L80 40 L90 40 L90 60 L80 60 L80 70 L70 70 L70 80 L60 80 L60 90 L40 90 L40 80 L30 80 L30 70 L20 70 L20 60 L10 60 L10 40 L20 40 L20 30 L30 30 L30 20 L40 20 Z" fill="none" stroke="url(#mck0)" stroke-width="4.2" stroke-linejoin="round"/><line x1="50" y1="50" x2="50" y2="10" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="90" y2="50" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="50" y2="90" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="10" y2="50" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="30" y2="30" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="70" y2="30" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="70" y2="70" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="30" y2="70" stroke="url(#mck0)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><circle cx="50" cy="50" r="22" fill="none" stroke="url(#wck0)" stroke-width="1.6" stroke-dasharray="2 3.2"/><circle cx="50" cy="10" r="5" fill="url(#wck0)"/><circle cx="90" cy="50" r="5" fill="url(#wck0)"/><circle cx="50" cy="90" r="5" fill="url(#wck0)"/><circle cx="10" cy="50" r="5" fill="url(#wck0)"/><circle cx="30" cy="30" r="3.4" fill="#FFFFFF"/><circle cx="70" cy="30" r="3.4" fill="#FFFFFF"/><circle cx="70" cy="70" r="3.4" fill="#FFFFFF"/><circle cx="30" cy="70" r="3.4" fill="#FFFFFF"/><circle cx="50" cy="50" r="12" fill="url(#rck0)"/><circle cx="50" cy="50" r="4.2" fill="#FFFFFF"/></svg>
   <div class="wrap">
@@ -151,7 +151,7 @@
     <p class="nota">Diagnóstico inicial y cotización sin costo · Reuniones por Google Meet · Atención en todo Latinoamérica</p>
   </div>
 </header>
-
+ 
 <section id="servicios">
   <div class="wrap">
     <div class="titulo">
@@ -187,7 +187,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="proceso" class="proceso">
   <div class="wrap">
     <div class="titulo">
@@ -203,7 +203,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="ruway">
   <div class="wrap historia">
     <div class="simbolo"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="mck1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7FE0D2"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient><linearGradient id="wck1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C2410C"/><stop offset="1" stop-color="#F2A541"/></linearGradient><radialGradient id="rck1" cx="0.4" cy="0.35" r="0.8"><stop offset="0" stop-color="#F2A541"/><stop offset="1" stop-color="#C2410C"/></radialGradient></defs><path d="M40 10 L60 10 L60 20 L70 20 L70 30 L80 30 L80 40 L90 40 L90 60 L80 60 L80 70 L70 70 L70 80 L60 80 L60 90 L40 90 L40 80 L30 80 L30 70 L20 70 L20 60 L10 60 L10 40 L20 40 L20 30 L30 30 L30 20 L40 20 Z" fill="none" stroke="url(#mck1)" stroke-width="4.2" stroke-linejoin="round"/><line x1="50" y1="50" x2="50" y2="10" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="90" y2="50" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="50" y2="90" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="10" y2="50" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="30" y2="30" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="70" y2="30" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="70" y2="70" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><line x1="50" y1="50" x2="30" y2="70" stroke="url(#mck1)" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><circle cx="50" cy="50" r="22" fill="none" stroke="url(#wck1)" stroke-width="1.6" stroke-dasharray="2 3.2"/><circle cx="50" cy="10" r="5" fill="url(#wck1)"/><circle cx="90" cy="50" r="5" fill="url(#wck1)"/><circle cx="50" cy="90" r="5" fill="url(#wck1)"/><circle cx="10" cy="50" r="5" fill="url(#wck1)"/><circle cx="30" cy="30" r="3.4" fill="#FFFFFF"/><circle cx="70" cy="30" r="3.4" fill="#FFFFFF"/><circle cx="70" cy="70" r="3.4" fill="#FFFFFF"/><circle cx="30" cy="70" r="3.4" fill="#FFFFFF"/><circle cx="50" cy="50" r="12" fill="url(#rck1)"/><circle cx="50" cy="50" r="4.2" fill="#FFFFFF"/></svg></div>
@@ -216,7 +216,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="cotizar" class="proceso">
   <div class="wrap">
     <div class="titulo">
@@ -243,7 +243,7 @@
     <p class="form-alt">También puedes escribirnos por <a href="https://wa.me/51992093538?text=Hola%20Ruway%20IA%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">WhatsApp al +51 992 093 538</a>.</p>
   </div>
 </section>
-
+ 
 <section id="contacto" style="padding-top:20px">
   <div class="cta-final">
     <h2>¿Listo para que la IA trabaje por ti?</h2>
@@ -255,7 +255,7 @@
     </div>
   </div>
 </section>
-
+ 
 <footer>
   <div class="wrap">
     <div class="fila">
@@ -271,7 +271,7 @@
     </div>
   </div>
 </footer>
-
+ 
 <!-- =====================================================================
      CONFIGURACIÓN: pega aquí las URLs de producción de tu n8n.
      - N8N_FORM_URL: nodo "Formulario - Página 1" → Production URL
@@ -283,7 +283,7 @@
   const N8N_FORM_URL = 'https://proyecto-agente.app.n8n.cloud/form/solicitar-cotizacion';
   const N8N_CHAT_URL = 'https://proyecto-agente.app.n8n.cloud/webhook/8a82cb6f-079e-476a-b34c-4bfdaa9d7780/chat';
 </script>
-
+ 
 <script>
   document.getElementById('anio').textContent = new Date().getFullYear();
   if (/^https:\/\//.test(N8N_FORM_URL)) {
@@ -294,7 +294,7 @@
     document.querySelectorAll('.js-cotizar').forEach((a) => { a.href = 'https://wa.me/51992093538?text=Hola%20Ruway%20IA%2C%20quiero%20una%20cotizaci%C3%B3n'; a.target = '_blank'; a.rel = 'noopener'; });
   }
 </script>
-
+ 
 <script type="module">
   if (/^https:\/\//.test(N8N_CHAT_URL)) {
     const css = document.createElement('link');
@@ -333,3 +333,4 @@
 </script>
 </body>
 </html>
+ 
